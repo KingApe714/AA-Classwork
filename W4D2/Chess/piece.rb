@@ -13,23 +13,15 @@ class Piece
   #  A key method of Piece is #moves, which should return an array of places a Piece can move to. Of course, every piece will move differently, so you can't write (implement) the #moves method of Piece without subclasses.
   
   def valid_moves
-    arr = []
-    (0...@board.length).each do |i|
-      (0...@board.length).each do |j|
-        if @board[i,j]= nil #Or null piece
-          arr << [i,j]
-        end
-      end
-    end
-    arr
+
   end
 
-  def to_s
-
+  def to_s #turn the value of the piece to a string
+    self.symbol.to_s
   end 
 
   def empty?
-    @board[pos] == @null_piece
+    @board[pos].symbol == nil
   end
 
   def pos=(val)
@@ -45,42 +37,11 @@ class Piece
 end
 
 
-# You should make modules for Slideable and Stepable. The Slideable module can implement #moves, but it needs to know what directions a piece can move in (diagonal, horizontally/vertically, both). Classes that include the module Slideable (Bishop/Rook/Queen) will need to implement a method #move_dirs, which #moves will use.
-
-module Slideable 
-    HORIZONTAL_DIRS =[]
-    DIAGONAL_DIRS = []
-
-
-    def horizontal_dir
-    end
-
-    def diagonal_dirs 
-    end
-    def moves 
-    end
-
-    private
-
-    def move_dirs
-    end
-
-    def grow_unblocked_moves_in_dir(dx,dy)
-    end
-
-end
-
-module Stepable
-
-end
-
-
-
 class NullPiece < Piece
   include Singleton 
-  attr_reader :name
-  def initialize(name = nil)
-    super(name)
+  attr_reader :color, :symbol
+  def initialize
+    super
   end
 end
 

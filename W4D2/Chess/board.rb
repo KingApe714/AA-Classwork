@@ -17,7 +17,6 @@ class Board
     def initialize
         @grid = Array.new(8) {Array.new(8)}
         @null_piece = NullPiece.instance
-        populate
     end
     def [](pos)
         i,j = pos
@@ -35,6 +34,23 @@ class Board
 
     end
 
+    def valid_pos?(pos)
+        x, y = pos
+        #check to see if in board first
+        if x < 0 || x > 7  || y < 0 || y > 7
+            return false
+        end
+        if self[pos].symbol != nil
+            return false
+        end
+        true
+    end
+
+    def add_piece(piece, pos)
+        if valid_pos?(pos)
+            self[pos] = piece
+        end
+    end
     def move_piece(color,start_pos, end_pos)
         raise "there is no piece at start_pos" if @grid[start_pos] = @null_piece 
         # raise "the piece cannot move to end_pos"     #### we need white and black
