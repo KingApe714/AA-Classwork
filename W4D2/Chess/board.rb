@@ -14,8 +14,8 @@ require_relative "./piece.rb"
 
 class Board
 
-    def initialize(grid= Array.new(8) {Array.new(8)})
-        @grid = grid
+    def initialize
+        @grid = Array.new(8) {Array.new(8)}
         @null_piece = NullPiece.instance
         populate
     end
