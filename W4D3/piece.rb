@@ -3,9 +3,8 @@
 #  where a Queen/Rook/Knight/ etc. will start and nil where the NullPiece will start.
 require "singleton"
 class Piece
-
   def initialize(color, board, pos=[])
-      @color =color
+      @color = color
       @board = Board.new()
       @pos = pos
         
@@ -39,9 +38,9 @@ end
 
 class NullPiece < Piece
   include Singleton 
-  attr_reader :color, :symbol
+  attr_reader :symbol
   def initialize
-    super
+    @symbol = nil
   end
 end
 

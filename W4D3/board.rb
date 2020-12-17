@@ -10,13 +10,13 @@
 # does it raise an error when there is no piece at the start? Does it successfully update the Board?
 
 # Once you get some of your pieces moving around the board, call over your TA for a code-review.
-require_relative "./piece.rb"
+# require_relative "./piece.rb"
 
 class Board
 
     def initialize
         @grid = Array.new(8) {Array.new(8)}
-        @null_piece = NullPiece.instance
+        #@null_piece = NullPiece.instance
     end
     def [](pos)
         i,j = pos
@@ -40,9 +40,9 @@ class Board
         if x < 0 || x > 7  || y < 0 || y > 7
             return false
         end
-        if self[pos].symbol != nil
-            return false
-        end
+        # if self[pos].symbol != nil
+        #     return false
+        # end
         true
     end
 
@@ -52,7 +52,7 @@ class Board
         end
     end
     def move_piece(color,start_pos, end_pos)
-        raise "there is no piece at start_pos" if @grid[start_pos] = @null_piece 
+        raise "there is no piece at start_pos" if @grid[start_pos].symbol == nil 
         # raise "the piece cannot move to end_pos"     #### we need white and black
 
         piece = @grid[start_pos]
@@ -60,22 +60,10 @@ class Board
         @grid[start_pos] = @null_piece
     end
 
-    def render 
-        (0...@grid.length).each do |idx|
-            r = (idx + 1).to_s
-            @grid.each do |piece|
-                r += "#{piece.value } | "
-            end
-            puts r 
-            puts --------------------------
-        end
-        puts "A  B  C  D  E  F  G  H"
-    end
-
 end
 
 
-
+b = Board.new
 # There are many different kinds of pieces in chess, and each moves a specific way.
 #  Based on their moves, they can be placed in four categories:
 

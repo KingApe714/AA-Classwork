@@ -1,9 +1,11 @@
 require_relative "Piece.rb"
 require_relative "slideable.rb"
-class Bishop
-    include slideable
-    def symbol
 
+class Bishop < Piece
+    include Slideable
+    attr_reader :symbol
+    def initialize
+        @symbol = :B
     end
     
     def move_dirs

@@ -1,10 +1,11 @@
 require_relative "Piece.rb"
 require_relative "slideable.rb"
 
-class Queen
-    include slidable
-    def symbol
-
+class Queen < Piece
+    include Slideable
+    attr_reader :symbol
+    def initialize
+        @symbol = :Q
     end
     
     def move_dirs
