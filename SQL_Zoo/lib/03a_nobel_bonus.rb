@@ -16,6 +16,13 @@ def physics_no_chemistry
     FROM
       nobels
     WHERE
-      subject = 'Phisycs' AND subject != 'Chemistry'
+      subject = 'Phisycs' AND subject != (
+        SELECT
+          subject
+        FROM
+          nobels
+        WHERE
+          subject = 'Chemistry'
+      )
   SQL
 end
