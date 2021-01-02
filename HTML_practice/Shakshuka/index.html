@@ -60,7 +60,40 @@
             <li>Jay Z is a rapper</li>
         </ol>
     </section>
+
+    <section>
+        <form action="http://example.com/signup" method="POST">
     
+            <label for="reviewer">Reviewer</label>
+            <input type="text" id="reviewer" name="reviewer">
+            <br/>
+    
+            <input type="radio" id="1" name="rating" value="1" checked>
+            <label for="1">1</label><br>
+            <input type="radio" id="2" name="rating" value="2">
+            <label for="2">2</label><br>
+            <input type="radio" id="3" name="rating" value="3">
+            <label for="3">3</label><br>
+            <input type="radio" id="4" name="rating" value="4">
+            <label for="4">4</label><br>
+            <input type="radio" id="5" name="rating" value="5">
+            <label for="5">5</label><br>
+
+            <br/>
+
+            <label for="expertise">Cooking Expertise:</label>
+            <select name="expertise" id="expertise">
+                <option value="default">Select Cooking Expertise</option>
+                <option value="sometimes">Sometimes Cook</option>
+                <option value="everyday">Cook Everyday</option>
+                <option value="hobby">Cooking is a Hobby</option>
+                <option value="pro">Professional Chef</option>
+            </select>
+    
+            <input type="submit" value="Sign Up!">
+        </form>
+    </section>
+
     <footer>
         <p>The recipe originated from my brain to be completely honest</p>
     </footer>
@@ -69,24 +102,5 @@
 </html>
 
 <!-- HTML Forms
-Now it's time to add a form for reviews.
-
-N.B. Remember that forms make a request upon submission to the provided action URI. Since we don't have a server to
-handle the request, our form won't really do anything on submission. Still, this exercise will help practice coding the
-structure of our form element.
-
-Make a section element before your footer and after the directions section
-Create a form element in the section
-Inside the form element make a label and text input for the name of the reviewer. Use the 'for' and 'id' attributes to
-link the label to the input.
-Create a label for "Rating" and 5 radio inputs with corresponding value attributes. Have the radio buttons default to
-checking '1'.
-Create a "Cooking Expertise" label that corresponds to a select element containing 5 option elements, don't forget their
-value attributes:
-Select Cooking Expertise (make this disabled and selected by default)
-Sometimes Cook
-Cook Everyday
-Cooking is a Hobby
-Professional Chef
 Code a label element for "Review" but this time place the corresponding textarea element inside the label element
 instead of using for/id. -->
