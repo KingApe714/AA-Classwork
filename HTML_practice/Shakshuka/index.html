@@ -1,4 +1,5 @@
 <html>
+    <link rel="stylesheet" href="stylesheet.css">
 
     <head>
         <title>hamburgers!!
@@ -21,16 +22,15 @@
 
             </script>
 
-            <link rel="stylesheet" href="stylesheet.css">
 
-            <script src="script.js"></script>
-        </title>
-    </head>
+<script src="script.js"></script>
+</title>
+</head>
 
     <header><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Appacademylogo.png" alt="App Academy">
         <nav>
             <h1>Hamburgers</h1>
-            <ul>
+            <ul class="ingredients-list">
                 <li><a href="#patty">Patty</a></li>
                 <li><a href="#lettuce">Lettuce</a></li>
                 <li><a href="#tomato">Tomato</a></li>
@@ -41,6 +41,7 @@
         </nav>
     </header>
 
+    <body>
     <aside>
         <h2>Ingredients</h2>
         
@@ -77,10 +78,11 @@
         </figcaption>
         <h2>Directions</h2>
 
-        <ol>
+        <ol class="ol_class">
             <li>put the thing in the thing</li>
             <li>theres something thats supposed to go here</li>
             <li>Jay Z is a rapper</li>
+            <li>I love turtles</li>
         </ol>
     </section>
 
@@ -91,6 +93,7 @@
             <input type="text" id="reviewer" name="reviewer">
             <br/>
     
+            <label for="rating">Rating</label><br>
             <input type="radio" id="1" name="rating" value="1" checked>
             <label for="1">1</label><br>
             <input type="radio" id="2" name="rating" value="2">
@@ -115,7 +118,7 @@
                 <textarea id="reviews" cols="30" rows="10"></textarea>
             </label>
     
-            <input type="submit" value="Sign Up!">
+            <input type="submit" id="sub" value="Submit!">
         </form>
     </section>
 
@@ -123,5 +126,7 @@
         <p>The recipe originated from my brain to be completely honest</p>
     </footer>
     I am the Author of this thing and if you haven't noticed it is absolutely amazing. Now leave me alone please and thank you good night.
+
+    </body>
 
 </html>
