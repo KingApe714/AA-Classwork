@@ -7,7 +7,7 @@ class Comment < ApplicationRecord
         foreign_key: :blog_id,
         class_name: :Blog
 
-    belongs_to :user,
+    belongs_to :author,
         primary_key: :id,
         foreign_key: :author_id,
         class_name: :User

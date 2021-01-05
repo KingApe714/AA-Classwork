@@ -1,0 +1,31 @@
+p {
+    color: black;
+}
+
+p span {
+    font-weight: bold;
+}
+
+p span.highlight {
+    color: yellow;
+}
+
+ul a {
+    text-decoration: none; /* This assures the a elements are not underlined */
+}
+
+.bg-grey {
+    background-color: whitesmoke; /* there are many color names */
+}
+
+#banana {
+    color: yellow; /* banana is not a color name unfortunately */
+}
+
+* {
+    border: 1px solid red; /* puts a red border around EVERY element */
+}
+
+header {
+    min-width: 500px !important; /* sets the min-width of the header to 500px regardless of any other styling rules */
+}
