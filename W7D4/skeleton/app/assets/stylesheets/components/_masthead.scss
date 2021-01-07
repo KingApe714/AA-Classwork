@@ -6,6 +6,12 @@
 	position: relative;
 }
 
+// The Rails Asset Pipeline takes care of precompiling our assets, so the correct file path for images in the assets/images folder is assets/example_image.jpg. + Images that are important to a website's search engine optimization (SEO) should be image tags rather than background images, as image tags are parsed by search engines.
+// Only list elements should be present within unordered lists, but list elements may contain other elements such as anchor tags or buttons.
+// After some HTML structuring you will notice some problems with the styling. Refer to the masthead mock up and edit the stylesheet to fix the following things:
+
+// Add application styling for anchor tags using the layout.scss file.
+
 .language-nav {
 	position: absolute;
 	top: -15px;
@@ -24,8 +30,16 @@
 		color: $dark-gray;
 	}
 
+	a:hover {
+		text-decoration: underline;
+	}
+
 	ul {
 		display: flex;
+	}
+
+	ul:first-child {
+		font-weight: bold;
 	}
 }
 
@@ -41,7 +55,7 @@
 	margin-top: 10px;
 	margin-bottom: 10px;
 
-	li {
+	li:not(:last-child){
 		margin-left: 10px;
 		border-right: 1px solid $light-gray;
 	}
@@ -52,6 +66,7 @@
 		color: #000;
 		font-weight: normal;
 		border: none;
+		font-size: 11px;
 	}
 
 	button:hover {
@@ -62,6 +77,10 @@
 	button, 
 	time {
 		margin-right: 10px;
+	}
+
+	a:hover {
+		text-decoration: underline;
 	}
 
 	i {
