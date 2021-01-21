@@ -10,16 +10,15 @@ class View {
   bindEvents() {
     this.$el.on("click", "li", (e) => {
       let $li = $(e.target)
-      let pos = $li.data("square")
-      this.makeMove(pos)
+      this.makeMove($li)
     })
   }
-
-  makeMove($square) {
+  
+  makeMove($li) {
     debugger 
+    let pos = $li.data("square")
     let playa = this.game.currentPlayer;
-
-
+    this.game.playMove(pos)
 
 
   }
