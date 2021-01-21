@@ -15,7 +15,7 @@
   \*************************/
 /***/ ((module) => {
 
-eval("class View {\n  constructor(game, $el) {\n    // debugger\n    this.game = game;\n    this.$el = $el;\n    this.setupBoard();\n    this.bindEvents();\n  }\n\n  bindEvents() {\n    this.$el.on(\"click\", \"li\", (e) => {\n      let $li = $(e.target)\n      let pos = $li.data(\"square\")\n      debugger\n      this.game.playMove(pos)\n    })\n  }\n\n  makeMove($square) {\n\n  }\n\n  setupBoard() {\n    const $ul = $(\"<ul>\")\n    for(let i = 0; i < 3; i++){\n      for(let j = 0; j < 3; j++){\n        let $li = $('<li>')\n        $li.data(\"square\", [i, j])\n        $ul.append($li)\n      }\n    }\n    this.$el.append($ul)\n  }\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
+eval("class View {\n  constructor(game, $el) {\n    // debugger\n    this.game = game;\n    this.$el = $el;\n    this.setupBoard();\n    this.bindEvents();\n  }\n\n  bindEvents() {\n    this.$el.on(\"click\", \"li\", (e) => {\n      let $li = $(e.target)\n      let pos = $li.data(\"square\")\n      this.makeMove(pos)\n    })\n  }\n\n  makeMove($square) {\n    debugger \n    let playa = this.game.currentPlayer;\n\n\n\n\n  }\n\n  setupBoard() {\n    const $ul = $(\"<ul>\")\n    for(let i = 0; i < 3; i++){\n      for(let j = 0; j < 3; j++){\n        let $li = $('<li>')\n        $li.data(\"square\", [i, j])\n        $ul.append($li)\n      }\n    }\n    this.$el.append($ul)\n  }\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
 
 /***/ }),
 
