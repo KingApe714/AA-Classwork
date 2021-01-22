@@ -1,3 +1,5 @@
+const APIUtil = require('./api_util')
+
 class FollowToggle {
     constructor(el) {
         this.$el = $(el)
@@ -10,10 +12,18 @@ class FollowToggle {
     render(){
         //choose what the button html texts will be
         if (this.followState === "unfollowed") {
+            this.$el.prop('disabled', false)
             this.$el.html("Follow!")
         }
         if (this.followState === "followed") {
+            this.$el.prop('disabled', false)
             this.$el.html("Unfollow!")
+        }
+        if (this.followState === "following") {
+
+        }
+        if (this.followState === "unfollowing") {
+
         }
     }
 
@@ -22,24 +32,28 @@ class FollowToggle {
         
         event.preventDefault();
         if (this.followState === "Unfollowed"){
-            $.ajax({
-                url: '/users/:id/follow',
-                type: 'POST',
-                data: formData,
-                success() {
-                    console.log('Your callback here!');
-                }
-            });
+            this.followState = 'following'
+            APIUtil.followUser(this.userId)
+            // $.ajax({
+            //     url: '/users/:id/follow',  //need to actually give it the id
+            //     type: 'POST',
+            //     data: formData,
+            //     success() {
+            //         console.log('Following!');
+            //     }
+            // });
             this.followState = 'followed'
         }else{
-            $.ajax({
-                url: '/users/:id/follow',
-                type: 'POST/DELETE',
-                data: formData,
-                success() {
-                    console.log('Your callback here!');
-                }
-            });
+            this.followState = 'unfollowing'
+            APIUtil.unfollowUser(this.userId)
+            // $.ajax({
+            //     url: '/users/:id/follow', //need to actually give it the id
+            //     type: 'POST/DELETE',
+            //     data: formData,
+            //     success() {
+            //         console.log('Unfollowed!');
+            //     }
+            // });
             this.followState = 'unfollowed'
         }
         this.render();
