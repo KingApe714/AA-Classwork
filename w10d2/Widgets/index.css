@@ -1,0 +1,22 @@
+
+.clock {
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 32px;
+    display: block;
+    width: 550px;
+    height: 150px;
+    border: solid black 5px;
+    background-color: lightcoral;
+    line-height: 1.2;
+}
+
+span {
+    background-color: aqua;
+
+}
+
+.clock p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10 px;
+}
