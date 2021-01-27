@@ -12,6 +12,7 @@ class Game extends React.Component {
                     board: new Minesweeper.Board(BOARDSIZE, NUMBOMBS),
                  };
     this.updateGame = this.updateGame.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   updateGame(tile, flagged) {
@@ -31,6 +32,15 @@ class Game extends React.Component {
     // }
   }
 
+  
+  reset(){
+    this.setState({board: new Minesweeper.Board(BOARDSIZE, NUMBOMBS)})
+  }
+  
+  handleClick(e){
+    e.preventDefault();
+    this.reset()
+  }
   render() {
     let modal = "";
     if(this.state.board.won()){
@@ -44,7 +54,13 @@ class Game extends React.Component {
     return (
       <>
         <Board board={this.state.board} updateGame={this.updateGame}/>
-        
+        <div className={`${modal === "" ? "" : "is-open"} modal` }>
+          <section className="modal-screen">
+          </section>
+          <div className="modal-message">{modal}
+            <button onClick={this.handleClick}>Reset Game</button>
+          </div>
+        </div>
       </>
     )
   }
