@@ -3,3 +3,23 @@
   clear: both;
   display: block;
 }
+
+.tile {
+  position: relative;
+  float: left;
+  border-style: outset;
+  width: 15px;
+  height: 15px;
+}
+
+.bombed {
+  
+}
+
+.explored {
+  border-style: inset;
+}
+
+.flagged {
+
+}
