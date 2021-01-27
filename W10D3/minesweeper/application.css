@@ -4,7 +4,16 @@
   display: block;
 }
 
+.board {
+  display: block;
+  margin: 0 auto;
+  /* position: absolute;
+  top: 50%;
+  left: 50%; */
+}
+
 .tile {
+  text-align: center;
   position: relative;
   float: left;
   border-style: outset;

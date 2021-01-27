@@ -53,7 +53,9 @@ class Game extends React.Component {
     }
     return (
       <>
-        <Board board={this.state.board} updateGame={this.updateGame}/>
+        <div className="board">
+          <Board board={this.state.board} updateGame={this.updateGame}/>
+        </div>
         <div className={`${modal === "" ? "" : "is-open"} modal` }>
           <section className="modal-screen">
           </section>
