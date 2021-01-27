@@ -4,12 +4,20 @@ class Tile extends React.Component {
     constructor(props){
       super(props);
       this.state = {};
+      // have tile info through props.tile
+      // we want to make a className based on tile ->
+      // - bombed, flagged, explored
+
+      // when clicked -> change the underlying Tile through updateGame
+      // 
     }
     render() {
-        console.log("We are in Tile!!")
+      //className for bombed, explored, flagged - 
+      //generate that string based on Tile's properties
+      debugger
       return (
         <>
-          T
+          <div className="tile"></div>
         </>
       )
     }

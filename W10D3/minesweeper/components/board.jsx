@@ -5,12 +5,17 @@ class Board extends React.Component {
     constructor(props){
       super(props);
       this.state = {};
-      console.log(props)
+      //board has access to updateGame via this.props.updateGame
     }
     render() {
-        console.log(this.props)
         const grid = this.props.board.grid.map((row, rowIdx) => {
-            return <div className="row">{row}</div>
+            const rowHTML = row.map((tile, colIdx)=> {
+              return <Tile key={rowIdx*this.props.board.gridSize + colIdx} 
+                                updateGame={this.props.updateGame} 
+                                tile={tile} 
+                                pos={[rowIdx,colIdx]}/>;
+            })
+            return <div className="row" key={rowIdx}>{rowHTML}</div>
         });
       return (
         <div>
