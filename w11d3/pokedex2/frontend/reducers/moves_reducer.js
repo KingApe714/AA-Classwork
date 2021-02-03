@@ -1,13 +1,13 @@
 import { RECEIVE_POKEMON } from './../actions/pokemon_actions';
 
-const itemsReducer = (state = {}, action) => {
+const movesReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type){
   case RECEIVE_POKEMON:
-    return Object.assign({}, state, action.items);
+    return Object.assign({}, state, action.moves);
   default:
     return state;
   }
 }
   
-export default itemsReducer;
+export default movesReducer;
