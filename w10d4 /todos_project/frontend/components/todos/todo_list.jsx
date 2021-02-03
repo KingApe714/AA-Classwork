@@ -10,7 +10,8 @@ export const TodoList = (props) => {
                 {props.allTodos.map((todo) => {
                     return (
                         <TodoListItem key={todo.id} todo={todo}
-                         receiveTodo={props.receiveTodo} removeTodo={props.removeTodo}/> //passing correctly?
+                         receiveTodo={props.receiveTodo} 
+                         removeTodo={props.removeTodo}/> //passing correctly?
                     )
                 })
             }
